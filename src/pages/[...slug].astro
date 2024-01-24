@@ -6,8 +6,6 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
 
 export async function getStaticPaths() {
-  // const env = import.meta.env.LANGUAGES;
-  // console.log(env);
   const languages = ['es', 'en', 'ro', 'ru', 'ca']
   const storyblokApi = useStoryblokApi()
   const { data } = await storyblokApi.get('cdn/links', {
@@ -50,7 +48,6 @@ const { data } = await storyblokApi.get(
 )
 
 const story = data.story
-console.log(story)
 ---
  
 <BaseLayout lang={language}>
