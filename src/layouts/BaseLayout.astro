@@ -1,0 +1,18 @@
+---
+const {lang, path} = Astro.props
+import LenguageSwapper from "../components/LenguageSwapper.vue"
+import { ViewTransitions } from "astro:transitions"
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>@storyblok/astro</title>
+    <ViewTransitions />
+  </head>
+  <body class='container mx-auto my-24'>
+    <LenguageSwapper client:load class=" absolute top-5 right-5"></LenguageSwapper>
+    <slot />
+  </body>
+</html>
